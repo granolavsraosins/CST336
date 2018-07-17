@@ -44,6 +44,7 @@
         font-weight:bold;
         color:yellow;
         cursor:pointer;
+        background-color: transparent;
     }
     
     #output{
