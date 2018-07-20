@@ -40,8 +40,8 @@ $i++;
 $cfg['Servers'][$i]['auth_type'] = 'config';
 /* Server parameters */
 $cfg['Servers'][$i]['host'] = 'us-cdbr-iron-east-04.cleardb.net';
-$cfg['Servers'][$i]['user'] = "b7dc607cc7f84c";
-$cfg['Servers'][$i]['password'] = "8f055f0b";
+$cfg['Servers'][$i]['user'] = "ba06a4cfb0463f";
+$cfg['Servers'][$i]['password'] = "2ae7c892";
 $cfg['Servers'][$i]['compress'] = false;
 $cfg['Servers'][$i]['AllowNoPassword'] = false;
 
@@ -53,8 +53,8 @@ $i++;
 $cfg['Servers'][$i]['auth_type'] = 'config';
 /* Server parameters */
 $cfg['Servers'][$i]['host'] = 'us-cdbr-iron-east-04.cleardb.net';
-$cfg['Servers'][$i]['user'] = "ba06a4cfb0463f";
-$cfg['Servers'][$i]['password'] = "2ae7c892";
+$cfg['Servers'][$i]['user'] = "b84eda6ff95f39";
+$cfg['Servers'][$i]['password'] = "aa64bfed";
 $cfg['Servers'][$i]['compress'] = false;
 $cfg['Servers'][$i]['AllowNoPassword'] = false;
 
