@@ -28,6 +28,9 @@
 <a href="/rramirezlab6/login.php"> Lab 6</a>
 <br>
 
+<a href="/rramirezlab7/index.html"> Lab 7</a>
+<br>
+
 <a href="/phpmyadmin/index.php"> phpMyAdmin</a>
 <br>
 
