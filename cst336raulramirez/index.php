@@ -5,12 +5,14 @@
 ?>
 <h1> Homework </h1>
 <a href="/rramirezhw1/index.php"> Homework 1</a>
-<br />
+<br>
 <a href="/rramirezhw3/index.php"> Homework 3</a>
-<br /> <br />
+<br>
+<a href="/rramirezhw4/index.html"> Homework 4</a>
+<br><br>
 
 <h1> Labs </h1>
-<a href="/rramirezlab1/index.php"> Lab 1 </a>
+<a href="/rramirezlab1/home.html"> Lab 1 </a>
 <br />
 
 <a href="/rramirezlab2/index.php"> Lab 2</a>
