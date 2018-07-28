@@ -1,16 +1,16 @@
-var output;
-var pacman;
 var loopTimer;
 var numLoops = 0;
-var redGhost;
-var blueGhost;
-var greenGhost;
-var pinkGhost;
-var whiteGhost;
+
+var rgDirection;
+var bgDirection;
+var pgDirection;
+var gDirection;
+var wgDirection;
 
 var walls = new Array();
 
 const PACMAN_SPEED = 10;
+const GHOST_SPEED = 5;
 
 var upArrowDown = false;
 var downArrowDown = false;
@@ -20,48 +20,21 @@ var direction = 'right';
 
 //loads the game and starts the initial positions
 function loadComplete(){
-	output = document.getElementById('output');
-	
-	pacman = document.getElementById('pacman');
-	
+	var output = $('#output')[0];
+	var pacman = $('#pacman')[0];
+	var redGhost = $('#redGhost')[0];
+	var blueGhost = $('#blueGhost')[0];
+	var pinkGhost = $('#pinkGhost')[0];
+	var greenGhost = $('#greenGhost')[0];
+	var whiteGhost = $('#whiteGhost')[0];
 	
 	//sets the left and top properties of pacman when the page loads
-	pacman.style.left='320px';
-	pacman.style.top='240px';
-	pacman.style.width='40px';
-	pacman.style.height='40px';
-	
-	redGhost = document.getElementById('redGhost');
-	blueGhost = document.getElementById('blueGhost');
-	pinkGhost = document.getElementById('greenGhost');
-	whiteGhost = document.getElementById('whiteGhost');
-	greenGhost = document.getElementById('pinkGhost');
-	
-	redGhost.style.left='280px';
-	redGhost.style.top='240px';
-	redGhost.style.width='40px';
-	redGhost.style.height='40px';
-	
-	blueGhost.style.left='280px';
-	blueGhost.style.top='240px';
-	blueGhost.style.width='40px';
-	blueGhost.style.height='40px';
-	
-	greenGhost.style.left='280px';
-	greenGhost.style.top='240px';
-	greenGhost.style.width='40px';
-	greenGhost.style.height='40px';
-	
-	pinkGhost.style.left='280px';
-	pinkGhost.style.top='240px';
-	pinkGhost.style.width='40px';
-	pinkGhost.style.height='40px';
-	
-	whiteGhost.style.left='280px';
-	whiteGhost.style.top='240px';
-	whiteGhost.style.width='40px';
-	whiteGhost.style.height='40px';
-	
+	$("#pacman").css({top:'240px',left:'320px',width:'40px',height:'40px'});
+    $("#redGhost").css({top:'240px',left:'280px',width:'40px',height:'40px'});
+	$("#blueGhost").css({top:'240px',left:'280px',width:'40px',height:'40px'});
+	$("#pinkGhost").css({top:'240px',left:'280px',width:'40px',height:'40px'});
+	$("#greenGhost").css({top:'240px',left:'280px',width:'40px',height:'40px'});
+	$("#whiteGhost").css({top:'240px',left:'280px',width:'40px',height:'40px'});
 	
 	loopTimer = setInterval(loop, 50);
 	
@@ -110,7 +83,7 @@ function loadComplete(){
 
 //makes wall array
 function createWall(left,top,width,height){
-    var wall=document.createElement('div');
+    var wall = document.createElement('div');
     wall.className='wall';
     wall.style.left= left + 'px';
     wall.style.top = top + 'px';
@@ -166,22 +139,21 @@ function loop(){
         pacman.style.top = originalTop;
     }
     
-    moveGhost(redGhost);
-    moveGhost(blueGhost);
-    moveGhost(greenGhost);
-    moveGhost(pinkGhost);
-    moveGhost(whiteGhost);
+    moveRedGhost();
+    moveBlueGhost();
+    movePinkGhost();
+    moveGreenGhost();
+    moveWhiteGhost();
     
-    if(hittest(pacman,redGhost) || hittest(pacman,blueGhost) || 
-        hittest(pacman,greenGhost) || hittest(pacman,pinkGhost)
-        || hittest(pacman,whiteGhost)){
+    if(hittest(pacman,redGhost) || hittest(pacman,whiteGhost) 
+        || hittest(pacman,pinkGhost) || hittest(pacman,greenGhost) || hittest(pacman,blueGhost)){
         clearInterval(loopTimer);
         output.innerHTML='You Died';
     }
 }
 
 //adds keydown event for keypress
-document.addEventListener('keydown', function(event){
+jQuery(document).on('keydown', function(event){
     var originalLeft = pacman.style.left;
     var originalTop = pacman.style.top;
     
@@ -215,6 +187,13 @@ document.addEventListener('keydown', function(event){
     }
     pacman.style.left = originalLeft;
     pacman.style.top = originalTop;
+});
+
+jQuery(document).on('keyup', function(event){
+   if(event.keyCode==37) leftArrowDown = false;
+   if(event.keyCode==38) upArrowDown = false;
+   if(event.keyCode==39) rightArrowDown = false;
+   if(event.keyCode==40) downArrowDown = false;
 });
 
 function tryToChangeDirection(){
@@ -253,21 +232,3 @@ function tryToChangeDirection(){
     pacman.style.left=originalLeft;
     pacman.style.top=originalTop;
 }
-
-document.addEventListener('keyup', function(event){
-   if(event.keyCode==37) leftArrowDown = false;
-   if(event.keyCode==38) upArrowDown = false;
-   if(event.keyCode==39) rightArrowDown = false;
-   if(event.keyCode==40) downArrowDown = false;
-});
-
-
-/*
-//adds keyup event for keypress
-document.addEventListener('keyDown', function(event){
-   if(event.keyCode==37) leftArrowDown = true;
-   if(event.keyCode==38) upArrowDown = true;
-   if(event.keyCode==39) rightArrowDown = true;
-   if(event.keyCode==40) downArrowDown = true;
-});
-*/
