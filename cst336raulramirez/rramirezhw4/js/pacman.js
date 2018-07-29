@@ -8,6 +8,7 @@ var gDirection;
 var wgDirection;
 
 var walls = new Array();
+var dots = new Array();
 
 const PACMAN_SPEED = 10;
 const GHOST_SPEED = 5;
@@ -27,6 +28,7 @@ function loadComplete(){
 	var pinkGhost = $('#pinkGhost')[0];
 	var greenGhost = $('#greenGhost')[0];
 	var whiteGhost = $('#whiteGhost')[0];
+	var dot = $('#dot')[0];
 	
 	//sets the left and top properties of pacman when the page loads
 	$("#pacman").css({top:'240px',left:'320px',width:'40px',height:'40px'});
@@ -79,6 +81,48 @@ function loadComplete(){
 	//bottom wall
 	createWall(-20,360,640,40);
 	
+	/*
+	//firstColumn
+	createDot(52,330);
+	createDot(52,290);
+	createDot(52,250);
+	createDot(52,210);
+	createDot(52,180);
+	createDot(52,140);
+	createDot(52,100);
+	createDot(52,55);
+	
+	//secondColumn
+	createDot(90,330);
+	createDot(90,180);
+	createDot(90,55);
+	
+	//thirdCol
+	createDot(130,330);
+	createDot(130,290);
+	createDot(130,250);
+	createDot(130,210);
+	createDot(130,180);
+	createDot(130,100);
+	createDot(130,55);
+	*/
+}
+//adding dots, link to grid for positioning
+//http://jakeweb.net/JS_GAMES/challenge05_1/index.php#5
+
+//makes circle array
+function createDot(left,top,width,height){
+    var dot = document.createElement('div');
+    dot.className='dot';
+    dot.style.left= left + 'px';
+    dot.style.top = top + 'px';
+    dot.style.width = width + 'px';
+    dot.style.height = height + 'px';
+    
+    gameWindow.appendChild(dot);
+    
+    var numDot = dot.length;
+    dots[numDot]=dot;
 }
 
 //makes wall array
@@ -94,7 +138,6 @@ function createWall(left,top,width,height){
     
     var numWalls = walls.length;
     walls[numWalls]=wall;
-    output.innerHTML=walls.length;
 }
 //tests each wall for hit
 function hitWall(element){
@@ -104,6 +147,8 @@ function hitWall(element){
     }
     return hit;
 }
+
+
 
 //main movement pattern pacman
 function loop(){
@@ -149,6 +194,8 @@ function loop(){
         || hittest(pacman,pinkGhost) || hittest(pacman,greenGhost) || hittest(pacman,blueGhost)){
         clearInterval(loopTimer);
         output.innerHTML='You Died';
+    }else if (hittest(pacman,dot)){
+        $("#dot").hide();
     }
 }
 

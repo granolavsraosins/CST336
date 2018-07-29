@@ -42,3 +42,10 @@ body{
 	position: absolute;
 	background-color: #666666;
 }
+.dot{
+	position: absolute;
+	height: 15px;
+  	width: 15px;
+  	background-color: black;
+  	border-radius: 50%;
+}
