@@ -3,7 +3,7 @@ session_start();
     include 'connect.php';
     $connect = getDBConnection();
     
-    $score=$_POST['score'];
+    $score=$_GET['score'];
     
     $sql = "INSERT INTO scores(username,score)
             VALUES (:username,:score)";
@@ -18,7 +18,7 @@ session_start();
           FROM scores
           WHERE username=:username";
     $stmt=$connect->prepare($sql);
-    $stmt->execute(array(":username"=>$_SESSION['username']));
+    $stmt-execute(array(":username"=>$_SESSION['username']));
     $result=$stmt->fetch(PDO::FETCH_ASSOC);
     echo json_encode($result);
 ?>

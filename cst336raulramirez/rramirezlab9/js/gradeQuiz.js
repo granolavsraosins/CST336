@@ -57,7 +57,7 @@ $(document).ready(function(){
             dataType : "json",
             data : {"score" : score},            
             success : function(data){
-                //console.log(data);
+                console.log(data);
                 $("#times").html(data.times);
                 $("#average").html(data.average);
                 $("#feedback").css("display","block");
@@ -65,7 +65,7 @@ $(document).ready(function(){
                 $("input[type='submit']").css("display","");
             },
             complete: function(data,status) { //optional, used for debugging purposes
-               //alert(status);
+               alert(status);
             }
         });//AJAX
     }); //formSubmit
