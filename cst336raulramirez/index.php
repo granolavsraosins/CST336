@@ -10,31 +10,26 @@
 <br>
 <a href="/rramirezhw4/index.html"> Homework 4</a>
 <br><br>
-
 <h1> Labs </h1>
 <a href="/rramirezlab1/home.html"> Lab 1 </a>
 <br />
-
 <a href="/rramirezlab2/index.php"> Lab 2</a>
 <br>
-
 <a href="/rramirezlab3/index.php"> Lab 3</a>
 <br>
-
 <a href="/rramirezlab4/index.php"> Lab 4</a>
 <br>
-
 <a href="/rramirezlab5/index.php"> Lab 5</a>
 <br>
-
 <a href="/rramirezlab6/login.php"> Lab 6</a>
 <br>
-
 <a href="/rramirezlab7/index.html"> Lab 7</a>
 <br>
-
+<a href="/rramirezlab8/index.php"> Lab 8</a>
+<br>
+<a href="/rramirezlab9/index.php"> Lab 9</a>
+<br>
 <a href="/phpmyadmin/index.php"> phpMyAdmin</a>
 <br>
-
 </body>
 </html>

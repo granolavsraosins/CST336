@@ -206,6 +206,6 @@ class __TwigTemplate_a1f8ef2ddf3e7b5d7218de1cbb3b9ecfecbf9ec3c6e48d3a63a77591ef7
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "server/databases/databases_footer.twig", "/home/ec2-user/environment/templates/server/databases/databases_footer.twig");
+        return new Twig_Source("", "server/databases/databases_footer.twig", "/home/ec2-user/environment/phpmyadmin/templates/server/databases/databases_footer.twig");
     }
 }

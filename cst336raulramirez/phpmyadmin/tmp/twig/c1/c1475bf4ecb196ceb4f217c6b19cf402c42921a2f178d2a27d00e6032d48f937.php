@@ -215,6 +215,6 @@ class __TwigTemplate_321dd6b20c17338079027bf52a0976003e20a132d8c9a8728d618677538
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "server/databases/table_row.twig", "/home/ec2-user/environment/templates/server/databases/table_row.twig");
+        return new Twig_Source("", "server/databases/table_row.twig", "/home/ec2-user/environment/phpmyadmin/templates/server/databases/table_row.twig");
     }
 }

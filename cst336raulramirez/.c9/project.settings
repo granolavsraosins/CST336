@@ -2,6 +2,9 @@
     "build": {
         "@saveall": true
     },
+    "instance": {
+        "@automaticShutdown": "30"
+    },
     "language": {
         "tern_defs": {
             "json()": {
@@ -20,7 +23,15 @@
     "run": {
         "configs": {
             "@inited": "true",
-            "json()": {}
+            "json()": {
+                "log": {
+                    "command": "rramirezlab9/js/gradeQuiz.js",
+                    "debug": true,
+                    "name": "log",
+                    "runner": "Node.js",
+                    "toolbar": true
+                }
+            }
         }
     },
     "welcome": {

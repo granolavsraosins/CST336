@@ -82,6 +82,6 @@ class __TwigTemplate_4f01ecaf9f760f17caeccf0ee0792cd4feb5d6f4346a582802f351ea0a3
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "server/databases/index.twig", "/home/ec2-user/environment/templates/server/databases/index.twig");
+        return new Twig_Source("", "server/databases/index.twig", "/home/ec2-user/environment/phpmyadmin/templates/server/databases/index.twig");
     }
 }

@@ -78,6 +78,6 @@ class __TwigTemplate_e744eaf8c4dc3c59eea3ee4dc1d2e7eb1157afb155b24aa5fe4e5cd4eb9
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "server/databases/databases_header.twig", "/home/ec2-user/environment/templates/server/databases/databases_header.twig");
+        return new Twig_Source("", "server/databases/databases_header.twig", "/home/ec2-user/environment/phpmyadmin/templates/server/databases/databases_header.twig");
     }
 }

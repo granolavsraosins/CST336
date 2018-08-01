@@ -139,6 +139,6 @@ class __TwigTemplate_98fa2c28f98926947042d6703f7f4bf4c785650bd2a15e4f1294321dda7
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "server/databases/create.twig", "/home/ec2-user/environment/templates/server/databases/create.twig");
+        return new Twig_Source("", "server/databases/create.twig", "/home/ec2-user/environment/phpmyadmin/templates/server/databases/create.twig");
     }
 }

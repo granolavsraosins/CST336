@@ -71,6 +71,6 @@ class __TwigTemplate_c64e0756e082abc80db1e9c40fca9749f024acb158050674ab1f5847b0a
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "server/sub_page_header.twig", "/home/ec2-user/environment/templates/server/sub_page_header.twig");
+        return new Twig_Source("", "server/sub_page_header.twig", "/home/ec2-user/environment/phpmyadmin/templates/server/sub_page_header.twig");
     }
 }
