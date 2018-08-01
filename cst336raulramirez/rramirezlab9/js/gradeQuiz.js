@@ -65,7 +65,7 @@ $(document).ready(function(){
                 $("input[type='submit']").css("display","");
             },
             complete: function(data,status) { //optional, used for debugging purposes
-               alert(status);
+               //alert(status);
             }
         });//AJAX
     }); //formSubmit
