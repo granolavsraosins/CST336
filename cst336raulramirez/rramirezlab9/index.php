@@ -40,7 +40,6 @@ function displayQuiz(){
                 <img src="img/mascot.png" alt="CSUMB Mascot" width="350" />
             </div>
         </div>
-        
         <!--Javascript files-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     </body>

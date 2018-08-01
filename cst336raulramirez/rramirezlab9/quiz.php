@@ -29,12 +29,9 @@
     <input type="radio" name="question4" id="q4-4"  Value="D"/><label for='q4-4'>All of the above.<br />
     <div id="question4-feedback" class="answer"></div><br />
     
-    <input type="submit" value="Submit" />
+    <input type="submit" value="Submit"/>
     
     <!--Will display the "loading" or "spinning" animated gif-->
     <div id="waiting">
     </div>
 </form>
-
-<!--Will display the quiz score-->
-<div id="scores"></div>
