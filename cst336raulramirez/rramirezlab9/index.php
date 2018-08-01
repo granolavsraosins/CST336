@@ -42,5 +42,6 @@ function displayQuiz(){
         </div>
         <!--Javascript files-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="/rramirezlab9/js/gradeQuiz.js"></script>
     </body>
 </html>
