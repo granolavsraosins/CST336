@@ -57,7 +57,7 @@ $(document).ready(function(){
             dataType : "json",
             data : {"score" : score},            
             success : function(data){
-                console.log(data);
+                //console.log(data);
                 $("#times").html(data.times);
                 $("#average").html(data.average);
                 $("#feedback").css("display","block");
