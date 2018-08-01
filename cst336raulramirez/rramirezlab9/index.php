@@ -6,7 +6,7 @@ function displayQuiz(){
     if(isset($_SESSION['username'])){
         include 'quiz.php';
     }else {
-        header("Location: login.php");
+        header("Location:login.php");
     }
 }
 ?>

@@ -1,11 +1,16 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
     <head>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
         <title>Login</title>
         <link href="css/styles.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
-        <h1>Login</h1>
+        <h1 class="text-center">Login</h1>
         <h2>Credentials required before submiting form.</h2>
         <p>You can log in using usernames <strong>user_1</strong> or <strong>user_2</strong>. The password is <strong>s3cr3t</strong>.</p>
         
