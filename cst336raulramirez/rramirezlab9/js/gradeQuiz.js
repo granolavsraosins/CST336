@@ -65,9 +65,10 @@ $(document).ready(function(){
                 $("input[type='submit']").css("display","");
             },
             complete: function(data,status) { //optional, used for debugging purposes
-               alert(status);
+               //alert(status);
             }
         });//AJAX
+        score = 0;
     }); //formSubmit
     //Styles a question as answered correctly
     function correctAnswer(questionFeedback){

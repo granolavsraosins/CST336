@@ -35,3 +35,5 @@
     <div id="waiting">
     </div>
 </form>
+<!--Will display the quiz score-->
+<div id="scores"></div>
