@@ -3,7 +3,7 @@ session_start();
     include 'connect.php';
     $connect = getDBConnection();
     
-    $score=$_GET['score'];
+    $score=$_POST['score'];
     
     $sql = "INSERT INTO scores(username,score)
             VALUES (:username,:score)";
