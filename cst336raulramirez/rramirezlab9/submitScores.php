@@ -18,7 +18,7 @@ session_start();
           FROM scores
           WHERE username=:username";
     $stmt=$connect->prepare($sql);
-    $stmt-execute(array(":username"=>$_SESSION['username']));
+    $stmt->execute(array(":username"=>$_SESSION['username']));
     $result=$stmt->fetch(PDO::FETCH_ASSOC);
     echo json_encode($result);
 ?>
