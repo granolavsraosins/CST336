@@ -3,6 +3,11 @@
 <?php
     echo "<h1>CST336 Internet Programming : <br>Raul Ramirez </h1>";
 ?>
+<h1>Final</h1>
+<a href="/final/superheroquiz/index.php"> Super Hero Quiz</a>
+<br>
+<br>
+
 <h1> Homework </h1>
 <a href="/rramirezhw1/index.php"> Homework 1</a>
 <br>
@@ -23,12 +28,15 @@
 <br>
 <a href="/rramirezlab6/login.php"> Lab 6</a>
 <br>
-<a href="/rramirezlab7/index.html"> Lab 7</a>
-<br>
 <a href="/rramirezlab8/index.php"> Lab 8</a>
 <br>
 <a href="/rramirezlab9/index.php"> Lab 9</a>
 <br>
+</br>
+</br>
+<a href="/finalProject/frontPage.php">Final Project</a>
+</br>
+</br>
 <a href="/phpmyadmin/index.php"> phpMyAdmin</a>
 <br>
 </body>
