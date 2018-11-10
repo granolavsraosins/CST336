@@ -1,11 +1,11 @@
 <?php
     session_start();
-    include "dbConnection.php";
+    include "/rramirezlab5/dbConnection.php";
     
     $conn = getDatabaseConnection("ottermart");
     
     if(!isset($_SESSION['adminName'])){
-        header("Location:index.php");
+        header("Location:login.php");
     }
     
     function displayAllProducts(){

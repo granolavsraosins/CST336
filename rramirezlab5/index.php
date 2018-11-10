@@ -26,8 +26,8 @@
 			$sql = "SELECT * FROM om_product WHERE 1";
 			
 			if(!empty($_GET['product'])){
-				$sql .= " AND productName LIKE :productName";
-				$namedParameters[":productName"] = "%" . $_GET['product']. "%";
+				 $sql .=  " AND productName LIKE :productName OR productDescription LIKE :productName";
+                 $namedParameters[":productName"] = "%" . $_GET['product'] . "%";
 			}
 			if(!empty($_GET['category'])){
 				$sql .= " AND catId = :categoryId";
@@ -44,7 +44,7 @@
 			if(isset($_GET['orderBy'])){
 				if($_GET['orderBy'] == "price"){
 					$sql .= " ORDER BY price";
-				}else {
+				}else{
 					$sql .= " ORDER BY productName";
 				}
 			}	
@@ -53,7 +53,7 @@
             $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
 			
 			foreach ($records as $record){
-				echo "<a href=\"purchaseHistory.php?productId=".$record["productId"]. "\"> History </a>";
+				echo "<a href='purchaseHistory.php?productId=".$record['productId']. "'> History </a>";
 				echo $record["productName"]." ".$record["productDescription"]. " $" . $record["price"]."<br/><br/>";
 			}
 		}
@@ -88,7 +88,7 @@
 				<label>Order result by:</label>
 				<br/>
 				<input type="radio" name="orderBy" value="price"/> Price <br/>
-				<input type="radio" name="orderBy" value="name"/> Name 
+				<input type="radio" name="orderBy" value="name"/> Name <br/>
 				<br/><br/>
 				<input type="submit" value="Search" name="searchForm">
 				</div>

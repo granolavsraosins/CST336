@@ -1,5 +1,5 @@
 <?php
-	include '../dbConnection.php';
+	include '/rramirezlab5/dbConnection.php';
 	$conn = getDabaseConnection("ottermart");
 	
 	$productId = $_GET['productId'];
