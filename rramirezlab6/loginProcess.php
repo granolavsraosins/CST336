@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include 'dbConnection.php';
+    include '/rramirezlab5/dbConnection.php';
     
     $conn = getDatabaseConnection("ottermart");
     
@@ -22,7 +22,7 @@
     
     if(empty($record)){
         $_SESSION['incorrect'] = true;
-        header("Location:index.php");
+        header("Location:login.php");
     }else {
         $_SESSION['incorrect'] = false;
         $_SESSION['adminName'] = $record['firstName'] . " " . $record['lastName'];

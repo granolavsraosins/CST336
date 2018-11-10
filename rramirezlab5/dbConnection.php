@@ -1,13 +1,13 @@
 <?php
 
-function getDatabaseConnection($dbname = "ottermart") {
+function getDatabaseConnection($dbname = ”ottermart”) {
     
     //C9 db info
-    $host = 'localhost';
-    $username = 'root';
-    $password = '';
+    $host = "localhost";
+    $username = ”root”;
+    $password = "";
     
-     //when connecting from Heroku
+    //when connecting from Heroku
     if  (strpos($_SERVER['HTTP_HOST'], 'herokuapp') !== false) {
         $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
         $host = $url["host"];

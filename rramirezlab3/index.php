@@ -1,14 +1,16 @@
 <?php
-    if(isset($_GET['keyword'])) {
-        include 'api/pixabayAPI.php';
-        $imageURLs = getImageURLs($_GET['keyword'], $_GET['layout']);
-        $bgURLs = getImageURLs($_GET['category'], $_GET['layout']);
-        $backgroundImage = $bgURLs[array_rand($bgURLs)];
-    } else {
-        $backgroundImage = "./img/sea.jpg";  
+    $backgroundImage = "img/sea.jpg";
+    include 'api/pixabayAPI.php';
+    //API call goes here
+    if(!empty($_GET['keyword'])){
+        //print_r($_GET['keyword']);
+        $imageURLs = getImageURLs($_GET['keyword'],$_GET[layout]);
+        $backgroundImage = $imageURLs[array_rand($imageURLs)];
+    }elseif(isset($_GET['category'])){
+        $imageURLs = getImageURLs($_GET['category'],$_GET[layout]);
+        $backgroundImage = $imageURLs[array_rand($imageURLs)];
     }
 ?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,7 +18,7 @@
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
         
         <style>
-            @import url("css/styles.css");
+            @import url("/rramirezlab3/css/styles.css");
             body {
                 background-image: url('<?=$backgroundImage?>');
             }
@@ -55,8 +57,8 @@
                 echo "<h2>Type a keyword to display a slideshow <br/> of random images from Pixabay.com</h2>";
             }else if (empty($_GET['keyword'])){
                 echo "<h2> Please enter a keyword </h2>";
-            } 
-            else {
+                
+            }else {
         ?>
         
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="width:500px">
