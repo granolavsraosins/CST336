@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 <html>
     <body>
+=======
+>>>>>>> 759cb6121d29a9eb1c48bd10f8cbb20b65488633
 <?php
     echo "<h1>CST336 Internet Programming : <br>Raul Ramirez </h1>";
 ?>
@@ -7,7 +10,12 @@
 <a href="/final/superheroquiz/index.php"> Super Hero Quiz</a>
 <br>
 <br>
+<<<<<<< HEAD
 
+=======
+<html>
+<body>
+>>>>>>> 759cb6121d29a9eb1c48bd10f8cbb20b65488633
 <h1> Homework </h1>
 <a href="/rramirezhw1/index.php"> Homework 1</a>
 <br>
