@@ -13,14 +13,18 @@ var board = "";
 var remainingGuesses = 6;
 
 window.onload = startGame();
-
+//replaybutton loads after condition is met
 $(".replayBtn").on('click', function() {
     location.reload();
 });
-
+//populates letters onto the page and makes them clickable, disables after click
 $("#letters").on("click", ".letter", function(){
     checkLetter($(this).attr("id"));
     disableButton($(this));
+});
+//hint button populates hint in the area if clicked
+$(".hint").on("click", function() {
+    $(".hint").text("Hint: " + selectedHint);
 });
 
 //FUNCTIONS
@@ -30,10 +34,10 @@ function startGame() {
     initBoard();
     updateBoard();
 }
-//Fill the board with underscores
+//Places underscores on the page according to what the word is.
 function initBoard() {
-    for(var letter in selectedWord) {
-        board.push("_");
+    for (var letter in selectedWord) {
+        board += '_';
     }
 }
 //picks a random word from the array and sets it to upper case into a new variable
@@ -43,20 +47,7 @@ function pickWord() {
     selectedWord = words[randomInt].word.toUpperCase();
     selectedHint = words[randomInt].hint;
 }
-//puts the amount of underscores on the board according to the word
-function updateBoard() {
-    $("#word").empty();
-    for (var i=0; i < board.length; i++){
-        document.getElementById("word").innerHTML += letter + " ";
-    }
-}
-//Creates the letters inside the letters div
-function createLetters(){
-    for(var letter of alphabet){
-        $("#letters").append("<button class='letter' id='" + letter + "'>" + letter + "</button>");
-    }
-}
-//populates the board according to the letter chosen and places the hint on the page
+//populates the board according to the letter chosen
 function updateBoard() {
     $("#word").empty();
     for (var letter of board) {
@@ -64,6 +55,12 @@ function updateBoard() {
         $("#word").append(' ');
     }
     $("#word").append("<br />");
+}
+//Creates the letters inside the letters div
+function createLetters(){
+    for(var letter of alphabet){
+        $("#letters").append("<button class='letter' id='" + letter + "'>" + letter + "</button>");
+    }
 }
 //Checks to see if the selected letter exists in the selected Word
 function checkLetter(letter) {
@@ -84,6 +81,30 @@ function checkLetter(letter) {
         }
     }
 }
+//function that shows the hint when clicked
+function showHint(){
+        $("#word").append("<span class ='hint'>Hint: " + selectedHint + "</span>");
+        $('#hint').hide();
+    }
+//Disables the button and changes the style to tell the user it's disabled
+function disableButton(btn){
+    btn.prop("disabled",true);
+    btn.attr("class", "btn btn-danger")
+}
+//will accept correct letter for the guessword
+function replaceAt(str, index, value) {
+    return str.substr(0, index) + value + str.substr(index + value.length);
+}
+//put the letters on the board and replaces the underscores
+function updateWord(positions, letter) {
+    for (var pos of positions) {
+        board = replaceAt(board, pos, letter)
+    }
+    updateBoard(board);
+    if (!board.includes('_')) {
+        endGame(true);
+    }
+}
 //Calculates and updates the image for our stick man
 function updateMan(){
     $("#hangImg").attr("src","img/stick_" + (6 - remainingGuesses) + ".png");
@@ -95,52 +116,6 @@ function endGame(win){
         $('#won').show();
     }else{
         $('#lost').show();
-    }
-}
-//Disables the button and changes the style to tell the user it's disabled
-function disableButton(btn){
-    btn.prop("disabled",true);
-    btn.attr("class", "btn btn-danger")
-}
-
-$(".letter").click(function() {
-    checkLetter($(this).attr("id"));
-    disableButton($(this));
-});
-
-$("#letterBtn").click(function(){
-    var boxVal = $("#letterBox").val();
-    console.log("You pressed the button and it has the value: " + boxVal);
-});
-
-$(".hint").on("click", function() {
-    $(".hint").text("Hint: " + selectedHint);
-});
-
-function createLetters() {
-    for(var letter of alphabet) {
-        let letterInput = '"' + letter + '"';
-        $("#letters").append("<button class='btn btn-success letter' id='" + letter + "'>" + letter + "</button>");
-    }
-}
-//will accept correct letter for the guessword
-function replaceAt(str, index, value) {
-    return str.substr(0, index) + value + str.substr(index + value.length);
-}
-//places underscores on the page according to what the word is.
-function initBoard() {
-    for (var letter in selectedWord) {
-        board += '_';
-    }
-}
-//put the letters on the board and replaces the underscores
-function updateWord(positions, letter) {
-    for (var pos of positions) {
-        board = replaceAt(board, pos, letter)
-    }
-    updateBoard(board);
-    if (!board.includes('_')) {
-        endGame(true);
     }
 }
 
