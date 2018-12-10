@@ -1,20 +1,17 @@
 <?php
     session_start();
-    include "dbConnection.php";
-    $conn = getDatabaseConnection("final_project");
+    
+    include 'inc/dbConnection.php';
+    $conn = getDatabaseConnection();
     
     $name = $_POST['name'];
     $email = $_POST['email'];
-    $care = $_POST['care'];
-    $anypets = $_POST['anypets'];
-    $description = $_POST['description'];
     
-    $sql = "INSERT INTO Application
-                (name, email, care, anypets, description) 
-                VALUES(:name, :email, :care, :anypets, :description)";
+    $sql = "INSERT INTO rented
+                (name, email) 
+                VALUES(:name, :email)";
     
-    $data = array(":name" => $name,":email" => $email, ":care" => $care,
-                    ":anypets" => $anypets, ":description" => $description);
+    $data = array(":name" => $name,":email" => $email);
     
     $stmt = $conn->prepare($sql);
     $stmt->execute($data);

@@ -1,14 +1,17 @@
 <?php
     session_start();
-    
+    if(!isset($_SESSION['cart'])) {
+        $_SESSION['cart'] = array();
+    }
     function displayCartCount() {
-      echo count($_SESSION['cart']);
+        echo count($_SESSION['cart']);
     }
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <title>About Us</title>
+        <title> Login </title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link href="./css/styles.css" rel="stylesheet" type="text/css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
@@ -23,8 +26,7 @@
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        
-            <div class="collapse navbar-collapse" id="navbarsExample09">
+        <div class="collapse navbar-collapse" id="navbarsExample09">
             <ul class="navbar-nav">
             <li class="nav-item active">
                 <a class="nav-link" href="index.php" id="home">
@@ -44,25 +46,28 @@
             </li>
           </ul>
         </div>
-
-        </nav>
+    </nav>
+    <br/>
+        <h1> VSE RENTALS - Admin Login</h1>
         
-        <h1>About Us</h1>
-        This site is for educational purposes only.
-        <br>
-        It was created for the California State University of Monterey Bay as part of the online CS program.
-        <br> 
-        This site was a collaboration between  <strong>William Barajas</strong>, <strong>Mercedes Garcia</strong>, <strong>Raul Ramirez</strong> and <strong>Eric Ybarra</strong>. 
-        <br>
-        Please note that none of the pets on this site are actually for sale.  This is a project for a college course.
-    <footer> 
-        <hr>
-        Internet Programming. 1997&copy; Team VSE <br />
-        <strong>Disclaimer:</strong> The information in this webpage is fictitous. <br />
-        It is used for academic purposes only.
-        <figure id="logo">
-            <img src="img/csumb.jpg" alt="CSUMB logo" />
-        </figure>
-    </footer>
+           <form method="POST" action="loginProcess.php">
+                <label for="user" class="sr-only">Username:</label>
+                <input type="text" id="user" class="form-control" name="adminName"/> <br /><br />
+                <label for="userpassword" class="sr-only">Password:</label>
+                <input type="password" id="userpassword" class="form-control" name="password"/> <br /><br />
+            
+                <input type="submit" class='btn btn-lg btn-primary btn-block' name="submitForm" value="Login!"/>
+                <br /><br />
+                <?php
+                    if($_SESSION['incorrect']){
+                        echo "<p class = 'lead' id = 'error' style='color:red'>";
+                        echo "<strong>Incorrect Username or Password!</strong></p>";
+                }
+                ?>
+        </form>
+        <br /><br />
+        
+        
+       
     </body>
 </html>
