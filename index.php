@@ -35,7 +35,7 @@
 <a href="/CST325">CST325</a>
 <br>
 </br>
-<a href="/finalProject2/index.php">Final Project</a>
+<a href="/finalProject/index.php">Final Project</a>
 <br>
 </br>
 </br>
