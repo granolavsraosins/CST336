@@ -5019,9 +5019,7 @@ class Results
                         'tbl_gis_visualization.php'
                         . Url::getCommon($_url_params),
                         Util::getIcon(
-                            'b_globe',
-                            __('Visualize GIS data'),
-                            true
+                            'b_globe.gif', __('Visualize GIS data'), true
                         )
                     )
                     . "\n";

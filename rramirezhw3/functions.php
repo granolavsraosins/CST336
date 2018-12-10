@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 function poster() {
   //prints aspect images
   foreach($_POST['aspect'] as $aspect){
-    echo "<div style='position: absolute; z-index: auto'><img src='./img/".$aspect.".png' alt='$aspect' title='".ucfirst("$aspect")."'width='100%'/></div>";
+    echo "<div style='position: relative; z-index: auto'><img src='./img/".$aspect.".png' alt='$aspect' title='".ucfirst("$aspect")."'width='100%'/></div>";
   }
   //prints franchise background
   if($_POST['franchise'] == 'cod') {

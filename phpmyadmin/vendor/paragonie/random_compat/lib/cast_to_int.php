@@ -50,16 +50,14 @@ if (!is_callable('RandomCompat_intval')) {
         if (is_int($number) || is_float($number)) {
             $number += 0;
         } elseif (is_numeric($number)) {
-            /** @psalm-suppress InvalidOperand */
             $number += 0;
         }
-        /** @var int|float $number */
 
         if (
             is_float($number)
-                &&
+            &&
             $number > ~PHP_INT_MAX
-                &&
+            &&
             $number < PHP_INT_MAX
         ) {
             $number = (int) $number;

@@ -43,7 +43,6 @@ if (!is_callable('random_bytes')) {
     function random_bytes($bytes)
     {
         try {
-            /** @var int $bytes */
             $bytes = RandomCompat_intval($bytes);
         } catch (TypeError $ex) {
             throw new TypeError(

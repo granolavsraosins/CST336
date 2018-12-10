@@ -33,29 +33,15 @@ $cfg['Servers'][$i]['compress'] = false;
 $cfg['Servers'][$i]['AllowNoPassword'] = true;
 
 /**
- * RDS server
- */
-$i++;
-/* Authentication type */
-$cfg['Servers'][$i]['auth_type'] = 'config';
-/* Server parameters */
-$cfg['Servers'][$i]['host'] = 'ottermart.chxdxx7kaynw.us-west-2.rds.amazonaws.com';
-$cfg['Servers'][$i]['user'] = 'phpMyAdmin';
-$cfg['Servers'][$i]['password'] = 'phpMyAdmin';
-$cfg['Servers'][$i]['compress'] = false;
-$cfg['Servers'][$i]['AllowNoPassword'] = false;
-
-
-/**
  * heroku server 
  */
 $i++;
 /* Authentication type */
 $cfg['Servers'][$i]['auth_type'] = 'config';
 /* Server parameters */
-$cfg['Servers'][$i]['host'] = 'us-cdbr-iron-east-04.cleardb.net';
-$cfg['Servers'][$i]['user'] = "b84eda6ff95f39";
-$cfg['Servers'][$i]['password'] = "aa64bfed";
+$cfg['Servers'][$i]['host'] = 'us-cdbr-iron-east-01.cleardb.net';
+$cfg['Servers'][$i]['user'] = 'b0bd6489f3d564';
+$cfg['Servers'][$i]['password'] = "4527fcc4";
 $cfg['Servers'][$i]['compress'] = false;
 $cfg['Servers'][$i]['AllowNoPassword'] = false;
 

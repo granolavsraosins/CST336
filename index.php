@@ -38,11 +38,6 @@
 <a href="/finalProject2/index.php">Final Project</a>
 <br>
 </br>
-<a href="/final">Final</a>
-<br>
-</br>
-<a href="/Midterm">Midterm</a>
-<br>
 </br>
 <a href="/phpmyadmin/index.php"> phpMyAdmin</a>
 <br>
